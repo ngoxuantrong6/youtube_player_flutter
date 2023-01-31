@@ -4,9 +4,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+import 'package:youtube_player_iframe_example/video_argument.dart';
 
 ///
 class SourceInputSection extends StatefulWidget {
+  final VideoArgument args;
+  const SourceInputSection({required this.args});
   @override
   _SourceInputSectionState createState() => _SourceInputSectionState();
 }
@@ -19,6 +22,7 @@ class _SourceInputSectionState extends State<SourceInputSection> {
   void initState() {
     super.initState();
     _textController = TextEditingController();
+    _textController.text = widget.args.url;
   }
 
   @override
